@@ -1,0 +1,65 @@
+trip_id,passenger_id,driver_id,pickup_location,dropoff_location,trip_date,distance_km,duration_minutes,fare,payment_status,trip_status
+1001,501.0,201,Victoria Island,Yaba,2026-09-21,23.0,41,3828,PAID,completed
+1002,502.0,202,Ikorodu,Festac,2026-09-22,5.3,64,2260,Paid,completed
+1003,503.0,203,Lekki,Festac,2026-09-07,19.3,35,7865,,
+1004,,204,Maryland,Lagos Island,2026-09-08,10.5,10,8216,PAID,
+1005,505.0,205,Surulere,Ikeja,2026-09-11,8.8,53,2837,paid,
+1006,506.0,,Ikoyi,Ikoyi,2026-09-04,19.3,15,7977,,completed
+1007,507.0,207,Ajah,Victoria Island,2026-09-30,17.9,56,6729,Pending,completed
+1008,,208,Gbagada,Lekki,2026-09-02,-5,20,3907,paid,
+1009,509.0,209,maryland,Gbagada,2026-09-09,25.5,30,5032,Failed,Cancelled
+1010,510.0,210,Surulere,Ikorodu,22/09/2026,28.3,19,6990,PAID,Cancelled
+1011,511.0,211,Maryland,AJAH,2026-09-06,10.3,38,7608,Failed,Completed
+1012,,,Yaba,Ikoyi,2026-09-08,unknown,18,3728,Failed,Cancelled
+1013,513.0,213, Maryland ,Ajah,2026-09-21,26.9,68,3170,pending,COMPLETED
+1014,514.0,214,Ikorodu,Festac,2026/09/08,17.6,64,6780,FAILED,Pending
+1015,515.0,215,Ikeja,Festac ,2026-09-08,16.3,16,2898,PAID,COMPLETED
+1016,,216,Gbagada,Ajah,2026-09-26,-5,-20,5126,,cancelled
+1017,517.0,217,Yaba,Gbagada,2026-09-18,22.5,78,8151,pending,Pending
+1018,518.0,,surulere,Ajah,2026-09-04,7.3,10,N/A,pending,COMPLETED
+1019,519.0,219,Victoria Island,Gbagada,not_a_date,11.1,74,6988,Pending,COMPLETED
+1020,,220,Ikeja,Festac,12/09/2026,28.7,77,2004,Failed,
+1021,521.0,221,Victoria Island,Ikoyi,2026-09-01,26.7,49,-1500,Paid,Cancelled
+1022,522.0,222,Lagos Island,VICTORIA ISLAND,2026-09-29,5.3,72,8684,paid,COMPLETED
+1023,523.0,223,Gbagada,Maryland,,28.6,31,4171,,
+1024,,,Festac,Ikorodu,2026-09-07,unknown,49,5268,Failed,
+1025,525.0,225,Festac,Maryland,2026-09-29,6.3,forty,2524,Failed,Completed
+1026,526.0,226, Festac ,Lekki,2026-09-19,18.9,10,2581,Paid,Cancelled
+1027,527.0,227,yaba,Ikoyi,2026-09-03,4.9,40,4281,,Cancelled
+1028,,228,Ikeja,Ikorodu,2026/09/18,28.3,70,3990,,
+1029,529.0,229,Victoria Island,Victoria Island,2026-09-07,20.8,55,5469,FAILED,
+1030,530.0,,Ikorodu,Yaba ,28/09/2026,21.2,22,2496,FAILED,Pending
+1031,531.0,231,Victoria Island,Lekki,2026-09-26,8.2,78,5675,PAID,
+1032,,232,Surulere,Maryland,2026-09-06,-5,-20,5630,,completed
+1033,533.0,233,Gbagada,FESTAC,2026-09-02,25.6,21,8173,Pending,COMPLETED
+1034,534.0,234,Maryland,Maryland,2026-09-14,8.8,61,2480,PAID,
+1035,535.0,235,Ajah,Surulere,2026-09-01,28.0,68,4336,FAILED,
+1036,,,lekki,Surulere,2026-09-05,unknown,17,N/A,,Completed
+1037,537.0,237,Ikoyi,Yaba,2026-09-24,4.4,71,6119,,COMPLETED
+1038,538.0,238,Festac,Victoria Island,not_a_date,26.0,18,6874,paid,Cancelled
+1039,539.0,239, Victoria Island ,Lagos Island,2026-09-13,9.6,15,7073,paid,
+1040,,240,Lagos Island,Lagos Island,22/09/2026,-5,43,3673,Failed,Cancelled
+1041,541.0,241,Ajah,Ikeja,2026-09-09,21.1,48,5745,Failed,completed
+1042,542.0,,Maryland,Lagos Island,2026/09/01,30.0,22,-1500,,Cancelled
+1043,543.0,243,Surulere,Ikeja,2026-09-17,28.2,18,4001,Failed,cancelled
+1044,,244,Maryland,FESTAC,2026-09-06,22.0,77,2064,,cancelled
+1045,545.0,245,gbagada,Victoria Island ,2026-09-30,28.4,27,4166,paid,completed
+1046,546.0,246,Festac,Ikeja,,10.4,36,7878,Failed,Cancelled
+1047,547.0,247,Gbagada,Surulere,2026-09-22,16.6,42,8931,Paid,completed
+1048,,,Ajah,Surulere,2026-09-21,unknown,-20,8317,PAID,cancelled
+1049,549.0,249,Ikorodu,Maryland,2026-09-06,17.9,64,6594,Paid,completed
+1050,550.0,250,Ikorodu,Ikeja,03/09/2026,17.7,forty,6771,,COMPLETED
+1051,551.0,251,Ikeja,Yaba,2026-09-14,11.3,15,4931,Pending,Cancelled
+1052,,252, Victoria Island ,Ikoyi,2026-09-22,24.1,62,7084,PAID,Cancelled
+1053,553.0,253,Ikeja,Ikeja,2026-09-28,26.8,13,3469,Failed,
+1054,554.0,,gbagada,Ikorodu,2026-09-26,24.9,44,N/A,paid,
+1055,555.0,255,Yaba,MARYLAND,2026-09-28,9.0,68,4864,pending,Cancelled
+1056,,256,Yaba,Gbagada,2026/09/08,-5,52,4282,paid,cancelled
+1057,557.0,257,Gbagada,Festac,not_a_date,13.8,78,4712,Paid,completed
+1058,558.0,258,Surulere,Ikeja,2026-09-29,18.7,43,2313,paid,
+1059,559.0,259,Ikorodu,Ikoyi,2026-09-12,14.8,75,2947,FAILED,Cancelled
+1060,,,Yaba,Ikorodu ,09/09/2026,unknown,76,8606,,Cancelled
+1005,505.0,205,Surulere,Ikeja,2026-09-11,8.8,53,2837,paid,
+1015,515.0,215,Ikeja,Festac ,2026-09-08,16.3,16,2898,PAID,COMPLETED
+1030,530.0,,Ikorodu,Yaba ,28/09/2026,21.2,22,2496,FAILED,Pending
+,,,,,,,,,,
