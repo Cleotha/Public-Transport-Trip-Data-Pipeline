@@ -6,7 +6,14 @@
 #Separate invalid records into an errors/ folder with an error_reason column.
 #Reject cancelled trips from completed-trip reports.
 import csv
+import logging
 import pandas as pd
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 def read_csv(filename):
     with open(filename, 'r') as f:
@@ -122,48 +129,52 @@ def handle_errors(df):
 
     valid_trip = valid
     error_trip = errors
-    completed_trip = valid_trip[
-    valid_trip['trip_status'].str.lower() == 'completed'
-]
-
+    completed_trip = valid_trip[valid_trip['trip_status'].str.lower() == 'completed']
     return valid_trip, error_trip, completed_trip
 
 import os
 def save_errors(errors, filename):
     os.makedirs('errors', exist_ok=True)
     errors.to_csv(f'errors/{filename}', index=False)
-    print(f'Saved {len(errors)} rejected records to errors/{filename}')
+    logging.info("Saved %s rejected records/ %s", len(errors), filename)
 
 
 from sqlalchemy import create_engine
 from dotenv import load_dotenv
 def load_to_postgres(completed_trip):
     load_dotenv()
-    engine = create_engine(
-        f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
-    )    
-    completed_trip.to_sql('transport', engine, if_exists='replace', index=False)
-    print("✅ Loaded to PostgreSQL!")
+    try:
+        logging.info("Connecting to postgreSQL")
+        engine = create_engine(
+            f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
+        )    
+        completed_trip.to_sql('transport', engine, if_exists='replace', index=False)
+        logging.info("Loaded %s completed trips into the postgre.", len(completed_trip))
+    except Exception:
+        logging.exception("Failed to connect to postgreSQL.")
 
 def run_pipeline():
-    print("Extracting...")
+    logging.info("Beginning data pipeline.")
+    logging.info("Extracting data")
     raw_transport_trips = read_csv('/Users/Marydoris/Cleotha/Public Transport Trip Data Pipeline/transport_trips.csv')
     
-    print("Cleaning...")
+    logging.info("Cleaning data")
     transport_trips = clean_trips(pd.DataFrame(raw_transport_trips))
 
-    print("Handling errors...")
+    logging.info("Handling errors in data")
     valid_trip, error_trip, completed_trip = handle_errors(transport_trips)
-    print(valid_trip, error_trip, completed_trip)
+    logging.info("Valid trip: %s", len(valid_trip))
+    logging.warning("Error record: %s", len(error_trip))
+    logging.info("Complete record: %s", len(completed_trip))
 
-    print("Saving errors...")
+    logging.info("Saving error data")
     save_errors(error_trip, 'error_trip.csv')
 
-    print('Analyzing...')
-    print(completed_trip)
+    logging.info('Analyzing data')
 
-    print("Loading...")
+    logging.info("Loading the data")
     load_to_postgres(completed_trip)
 
-    print("🎉 Pipeline complete!")
-run_pipeline()
+    logging.info("Pipeline completed successfully!")
+if __name__ == "__main__":
+    run_pipeline()
